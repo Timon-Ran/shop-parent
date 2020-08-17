@@ -1,0 +1,29 @@
+server:
+  port: 2020
+spring:
+  application:
+    name: hyxs-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      locator:
+        enabled: true
+      routes:
+        - id: hyxs-weixin
+          uri: lb://hyxs-weixin
+          predicates:
+            - Path=/hyxs-weixin/**
+          filters:
+            - SwaggerHeaderFilter
+            - StripPrefix=1
+        - id: hyxs-member
+          uri: lb://hyxs-member
+          predicates:
+            - Path=/hyxs-member/**
+          filters:
+            - SwaggerHeaderFilter
+            - StripPrefix=1
+      x-forwarded:
+        enabled: false

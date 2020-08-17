@@ -1,0 +1,9 @@
+# Project exclude paths
+/shop-basics/shop-basics-springcloud-gateway/target/
+/shop-common/shop-common-core/target/
+/shop-service-api/shop-service-api-member/target/
+/shop-service-api/shop-service-api-weixin/target/
+/shop-service-base/shop-service-api-base/target/
+/shop-service-impl/shop-service-member/target/
+/shop-service-impl/shop-service-weixin/target/
+/shop-service-job/shop-service-member-job/target/
